@@ -16,7 +16,7 @@ onMounted(async () => {
   // For now, simulate with placeholder
   try {
     // loginUrl.value = await GetLoginUrl()
-    loginUrl.value = 'https://accounts.hytale.com/oauth/authorize'
+    loginUrl.value = 'https://oauth.accounts.hytale.com/oauth2/auth?client_id=hytale-launcher&response_type=code&scope=openid+offline+auth:launcher'
   } catch (error) {
     router.push({ name: 'error', query: { error: String(error) } })
   }
