@@ -72,6 +72,63 @@ The launcher communicates with these endpoints (domain: `hytale.com`):
 6. Apply patches sequentially
 7. Validate installation
 
+## Build
+
+Prerequisites:
+- Go (see `go.mod`)
+- Node.js 20+
+
+Local build:
+
+```bash
+make build
+```
+
+Platform notes:
+- Linux:
+  - Debian/Ubuntu (apt):
+    ```bash
+    sudo apt-get update
+    sudo apt-get install -y libgtk-3-dev libwebkit2gtk-4.0-dev libglib2.0-dev build-essential
+    ```
+  - Fedora/RHEL (dnf):
+    ```bash
+    sudo dnf install -y gtk3-devel webkit2gtk4.0-devel glib2-devel gcc-c++
+    ```
+  - Arch (pacman):
+    ```bash
+    sudo pacman -S --needed gtk3 webkit2gtk glib2 base-devel
+    ```
+  - openSUSE (zypper):
+    ```bash
+    sudo zypper install -y gtk3-devel webkit2gtk3-devel glib2-devel gcc-c++
+    ```
+- macOS:
+  - Xcode Command Line Tools:
+    ```bash
+    xcode-select --install
+    ```
+  - Homebrew (if you need it):
+    ```bash
+    brew install go node
+    ```
+- Windows:
+  - Visual Studio Build Tools (C++ workload):
+    ```powershell
+    choco install -y visualstudio2022buildtools visualstudio2022-workload-vctools
+    ```
+    ```powershell
+    winget install --id Microsoft.VisualStudio.2022.BuildTools -e
+    ```
+  - Go/Node.js (if needed):
+    ```powershell
+    choco install -y golang nodejs-lts
+    ```
+    ```powershell
+    winget install --id GoLang.Go -e
+    winget install --id OpenJS.NodeJS.LTS -e
+    ```
+
 ## Disclaimer
 
 This code is provided for educational and research purposes only. All rights to Hytale belong to Hypixel Studios.
